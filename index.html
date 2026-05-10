@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phuoc2k9evn.edu | Race · Conditional · Ghost Mapping (Textbook Style)</title>
+    <style>
+        /* Siêu tối giản: không màu mè, không hiệu ứng, chỉ layout cơ bản */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: white;
+            font-family: 'Courier New', 'SF Mono', 'Menlo', monospace;
+            color: #111;
+            line-height: 1.5;
+            font-size: 15px;
+        }
+
+        /* Container đơn giản, không shadow, không border rườm rà */
+        .container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Header style textbook */
+        .institution {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #333;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 0.3rem;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 600;
+            margin: 1rem 0 0.25rem;
+            letter-spacing: -0.3px;
+            color: #000;
+        }
+
+        .subhead {
+            font-size: 0.9rem;
+            color: #2c2c2c;
+            border-left: 3px solid #aaa;
+            padding-left: 1rem;
+            margin: 0.75rem 0 2rem 0;
+            font-style: normal;
+        }
+
+        /* card chỉ là khung gạch chân, không bóng mờ */
+        .section-block {
+            margin: 2.2rem 0;
+            border-top: 1px solid #ddd;
+            padding-top: 1.2rem;
+        }
+
+        .section-title {
+            font-weight: 700;
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .section-title span {
+            background: #f0f0f0;
+            padding: 0.1rem 0.5rem;
+            font-size: 0.8rem;
+            border-radius: 20px;
+            font-weight: normal;
+        }
+
+        /* grid minimal - chỉ flex đơn giản */
+        .grid-basic {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin: 1.2rem 0;
+        }
+
+        .card {
+            flex: 1 1 250px;
+            background: #fff;
+            border: 1px solid #e5e5e5;
+            padding: 1rem 1.2rem;
+        }
+
+        .card h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            border-bottom: 1px dotted #ccc;
+            display: inline-block;
+        }
+
+        .card p, .card ul {
+            font-size: 0.85rem;
+            margin-top: 0.6rem;
+            color: #1e1e1e;
+        }
+
+        .card ul {
+            padding-left: 1.2rem;
+        }
+
+        .card li {
+            margin: 0.3rem 0;
+        }
+
+        /* bảng kiểu textbook */
+        .mapping-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+            font-size: 0.85rem;
+        }
+
+        .mapping-table th, .mapping-table td {
+            border: 1px solid #ccc;
+            padding: 0.6rem 0.8rem;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        .mapping-table th {
+            background: #f8f8f8;
+            font-weight: 600;
+        }
+
+        .code-sample {
+            background: #f6f6f6;
+            border-left: 3px solid #888;
+            padding: 0.8rem 1rem;
+            font-family: monospace;
+            font-size: 0.8rem;
+            margin: 1rem 0;
+            white-space: pre-wrap;
+            word-break: break-all;
+        }
+
+        hr {
+            margin: 1.5rem 0;
+            border: 0;
+            border-top: 1px solid #ddd;
+        }
+
+        footer {
+            margin-top: 3rem;
+            text-align: center;
+            font-size: 0.7rem;
+            color: #4a4a4a;
+            border-top: 1px solid #eee;
+            padding-top: 1.2rem;
+        }
+
+        @media (max-width: 700px) {
+            .container {
+                padding: 0 1rem;
+            }
+            h1 {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="institution">📘 Phuoc2k9evn.edu · Test Lab</div>
+    <h1>Race · Conditional · Ghost Mapping</h1>
+    <div class="subhead">Trang textbook thuần tĩnh — giải thích khái niệm, không javascript tương tác, chỉ nội dung học thuật nhẹ nhàng.</div>
+
+    <!-- 3 khái niệm chính -->
+    <div class="grid-basic">
+        <div class="card">
+            <h3>🏁 Race Condition</h3>
+            <p>Trong khoa học máy tính, race condition xảy ra khi nhiều tiến trình/thread cùng truy cập dữ liệu chia sẻ mà không có cơ chế đồng bộ, dẫn đến kết quả không xác định.</p>
+            <ul>
+                <li>Ví dụ: hai bộ đếm cùng tăng biến toàn cục</li>
+                <li>Hậu quả: dữ liệu sai lệch, crash</li>
+                <li>Giải pháp: mutex, atomic, lock</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h3>⚙️ Conditional Logic</h3>
+            <p>Conditional là cấu trúc rẽ nhánh dựa trên biểu thức boolean (if-else, switch-case, ternary). Nó điều khiển luồng chương trình dựa vào trạng thái đầu vào.</p>
+            <ul>
+                <li>If / else if / else</li>
+                <li>Toán tử điều kiện (cond ? a : b)</li>
+                <li>Mapping logic → hành vi khác nhau</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h3>👻 Ghost Mapping</h3>
+            <p>"Ghost mapping" là một kỹ thuật ánh xạ ảo hoặc lưu trữ dữ liệu tạm thời, thường thấy trong pattern "ghost" hoặc lazy loading, tạo ra bản sao nhẹ trước khi đồng bộ.</p>
+            <ul>
+                <li>Ánh xạ từ key → ghost entity</li>
+                <li>Ứng dụng trong caching, proxy</li>
+                <li>Kết hợp conditional để chọn loại ghost</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Conditional + Ghost Mapping Table (textbook style) -->
+    <div class="section-block">
+        <div class="section-title">
+            🔁 Conditional to Ghost Mapping <span>lookup table</span>
+        </div>
+        <p>Bảng ánh xạ điều kiện (Condition) → thực thể Ghost Mapping tương ứng. Mỗi trạng thái sẽ quyết định thuộc tính "bóng ma".</p>
+        <table class="mapping-table">
+            <thead>
+                <tr><th>Condition (trạng thái)</th><th>Ghost Entity</th><th>Mapping Scope</th><th>Mô tả</th></tr>
+            </thead>
+            <tbody>
+                <tr><td><code>mode === 'mist'</code></td><td>🌫️ Mist Phantom</td><td>ethereal_fog_zone</td><td>Ánh xạ đến vùng sương mù, ưu tiên tàng hình</td></tr>
+                <tr><td><code>mode === 'echo'</code></td><td>🗣️ Echo Wraith</td><td>canyon_of_whispers</td><td>Mapping âm thanh, phản hồi từ vách đá</td></tr>
+                <tr><td><code>mode === 'shadow'</code></td><td>🌑 Shadow Stalker</td><td>umbral_corridor</td><td>Bản đồ bóng tối, di chuyển qua bức tường</td></tr>
+                <tr><td><code>mode === 'spectre'</code></td><td>👁️ Spectre Guide</td><td>astral_beacon</td><td>Dẫn đường linh hồn, mapping tọa độ ảo</td></tr>
+                <tr><td><code>default</code></td><td>👤 Ghost Void</td><td>null_mapping</td><td>Fallback, không ánh xạ cụ thể</td></tr>
+            </tbody>
+        </table>
+        <div class="code-sample">
+            // conditional ghost mapping — pseudo code<br>
+            function getGhostMapping(condition) {<br>
+            &nbsp;&nbsp;if (condition === "mist") return { name: "Mist Phantom", zone: "ethereal_fog" };<br>
+            &nbsp;&nbsp;else if (condition === "echo") return { name: "Echo Wraith", zone: "whisper_canyon" };<br>
+            &nbsp;&nbsp;else if (condition === "shadow") return { name: "Shadow Stalker", zone: "umbral_path" };<br>
+            &nbsp;&nbsp;else return { name: "Void Ghost", zone: "default_mapping" };<br>
+            }
+        </div>
+    </div>
+
+    <!-- Race Condition minh họa kiểu textbook -->
+    <div class="section-block">
+        <div class="section-title">
+            🧪 Race Condition <span>minh họa bằng lý thuyết</span>
+        </div>
+        <p>Hai tiến trình cùng thực hiện <code>counter++</code> dẫn đến mất mát dữ liệu. Dưới đây là ví dụ mô tả (không chạy JS tương tác, chỉ nội dung sách).</p>
+        <div class="code-sample">
+            // Giả lập race condition (hai luồng không đồng bộ)<br>
+            let shared_counter = 0;<br>
+            <br>
+            // Thread A: read counter (0) → increment → write (1)<br>
+            // Thread B: read counter (0) → increment → write (1) <br>
+            // Kết quả mong đợi: 2 , nhưng thực tế có thể là 1 → race condition.<br>
+            <br>
+            // Giải pháp đồng bộ (mutex):<br>
+            // lock(); counter++; unlock();
+        </div>
+        <p>⛔ <strong>Lưu ý:</strong> Trong hệ thống real-time, race condition có thể gây lỗi nghiêm trọng. Ghost mapping có thể dùng để snapshot trạng thái nhằm phát hiện race.</p>
+    </div>
+
+    <!-- Kết hợp cả ba: Race + Conditional + Ghost Mapping (textbook) -->
+    <div class="section-block">
+        <div class="section-title">
+            🧠 Ứng dụng: Conditional Ghost Mapping trong môi trường Race
+        </div>
+        <p>Khi kết hợp: Sử dụng conditional logic để chọn chiến lược "ghost mapping" nhằm ghi lại trạng thái trước race — pattern này gọi là <strong>"Ghost Snapshot"</strong>. Mỗi ghost mapping có thể lưu lại bản sao trạng thái để rollback khi phát hiện xung đột.</p>
+        <table class="mapping-table">
+            <thead><tr><th>Race level</th><th>Ghost Strategy (Conditional)</th><th>Mapping result</th></tr></thead>
+            <tbody>
+                <tr><td>Low contention</td><td>mode = "optimistic"</td><td>Ghost log nhẹ, kiểm tra sau</td></tr>
+                <tr><td>High contention</td><td>mode = "pessimistic"</td><td>Ghost mapping kép (double buffer)</td></tr>
+                <tr><td>Undefined</td><td>mode = "shadow"</td><td>Bản đồ bóng tối, ghi đè có điều kiện</td></tr>
+            </tbody>
+        </table>
+        <div class="code-sample">
+            // Kiến trúc mẫu: conditional ghost mapping với race detection<br>
+            if (raceDetected) {<br>
+            &nbsp;&nbsp;let ghost = conditionalGhostMapping(currentMode);  // mist / echo / shadow<br>
+            &nbsp;&nbsp;ghost.captureState();<br>
+            &nbsp;&nbsp;resolveConflict(ghost);<br>
+            } else {<br>
+            &nbsp;&nbsp;proceedNormal();<br>
+            }
+        </div>
+        <hr>
+        <p style="font-size: 0.8rem;">✨ <strong>Phuoc2k9evn.edu — Test Race Conditional Ghost Mapping</strong> — Tài liệu thuần tĩnh, không javascript phức tạp, đúng tinh thần "trang text book".</p>
+    </div>
+
+    <footer>
+        ⚡ Trang siêu tối giản | Nội dung mang tính học thuật | Race · Conditional · Ghost Mapping — chỉ HTML / CSS.
+    </footer>
+</div>
+</body>
+</html>
